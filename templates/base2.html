@@ -1,0 +1,228 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/blog1.css">
+        <title>Blog</title>
+    </head>
+    <body>
+  
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary navbar-inverse">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav" >
+                <a class="nav-item nav-link active" href="{% url 'blog:post_list' %}">Blog<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{% url 'blog:about' %}">About</a>
+                <a class="nav-item nav-link" href="https://www.github.com">Githhub</a>
+                <a class="nav-item nav-link " href="https://www.linkedin.com">Linked In</a>
+            </div>
+
+            {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'blog:post_new' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'blog:post_draft_list' %}">Drafts</a>
+                <a class="nav-item nav-link " href="#">Log Out</a>
+                <a class="nav-item nav-link " Welcome: {{user.username}}></a> 
+
+            {% else %}
+                <a class='nav navbar-right' href="#">Login</a>
+
+            {% endif %}
+                        
+             
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary navbar-inverse">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </nav>
+
+    </nav>         
+
+        <div class="jumbotron jumbotron-fluid bg-info text-black text-center" style=" background-image: url(https://static.toiimg.com/photo/67600403/group-travel.jpg?width=748&resize=4);background-size:100%;">
+            <div class="container">
+                <h1 class="display-1">WELCOME TO MY TRAVEL BLOG.</h1>
+                <p class="lead">This is my new blog.Lots of love.</p>
+                <p class="lead">2020 has come, maybe not with a bang as a lot of us may have hoped, but the world goes on and as such I have decided to extend this most beautiful travel blogs list even further with 6 new travel blogs to check out, bringing it to 20, a perfect number for the 2020 year. Without further ado, let's check out all the beautiful travel blogs out there.</p>
+                <p class="lead">As some of you may know, I have been in the design industry for the past 10 years working as a freelance designer in various companies while also running this blog. In fact, the majority of my income is mostly from my design freelance work over at The Pete Design.</p>
+                <p class="lead">I value well-designed products and today, I want to dive down into the design of travel blogs and featured the best design travel blogs out there that take storytelling to the next level.
+
+                </p>
+            </div>
+        </div>
+
+
+        
+
+
+
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class='blog_posts'>
+                        {% block content %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
+
+            <!-- Footer -->
+            <footer class="page-footer font-small white">
+
+    <!-- Footer Links -->
+                <div class="container">
+  
+      <!-- Grid row-->
+                    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+  
+        <!-- Grid column -->
+                        <div class="col-md-2 mb-3">
+                            <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!">About us</a>
+                            </h6>
+                        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+                        <div class="col-md-2 mb-3">
+                            <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!">Products</a>
+                        </h6>
+                        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+                        <div class="col-md-2 mb-3">
+                            <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!">Awards</a>
+                            </h6>
+                        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+                        <div class="col-md-2 mb-3">
+                            <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!">Help</a>
+                        </h6>
+                        </div>
+                            <!-- Grid column -->
+                    
+                            <!-- Grid column -->
+                        <div class="col-md-2 mb-3">
+                            <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!">Contact</a>
+                            </h6>
+                        </div>
+                            <!-- Grid column -->
+                    
+                    </div>
+                        <!-- Grid row-->
+                        <hr class="rgba-white-light" style="margin: 0 15%;">
+                    
+                        <!-- Grid row-->
+                        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+                    
+                            <!-- Grid column -->
+                            <div class="col-md-8 col-12 mt-5">
+                                <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium doloremque laudantium, totam rem
+                                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                                    explicabo.
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+                            </div>
+                            <!-- Grid column -->
+                    
+                        </div>
+                        <!-- Grid row-->
+                            <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+                    
+                        <!-- Grid row-->
+                        <div class="row pb-3">
+                    
+                            <!-- Grid column -->
+                            <div class="col-md-12">
+                    
+                                <div class="mb-5 flex-center">
+                    
+                                    <!-- Facebook -->
+                                    <a class="fb-ic">
+                                        <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a class="tw-ic">
+                                        <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+                                    </a>
+                                    <!-- Google +-->
+                                    <a class="gplus-ic">
+                                        <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+                                    </a>
+                                    <!--Linkedin -->
+                                    <a class="li-ic">
+                                        <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+                                    </a>
+                                    <!--Instagram-->
+                                    <a class="ins-ic">
+                                        <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+                                    </a>
+                                    <!--Pinterest-->
+                                    <a class="pin-ic">
+                                        <i class="fab fa-pinterest fa-lg white-text"> </i>
+                                    </a>
+                    
+                                </div>
+                    
+                            </div>
+                            <!-- Grid column -->
+                    
+                        </div>
+                        <!-- Grid row-->
+                    
+                    </div>
+                        <!-- Footer Links -->
+                    
+                        <!-- Copyright -->
+                                <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                                    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+                                </div>
+    <!-- Copyright -->
+  
+        </footer>
+  <!-- Footer -->
+
+
+        </div>
+
+
+
+    
+        
+
+
+ 
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>

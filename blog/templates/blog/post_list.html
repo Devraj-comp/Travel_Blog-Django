@@ -1,0 +1,73 @@
+{% extends 'blog/base1.html' %}
+
+{% block content %}
+<div class="centerstage">
+    <h1>hello</h1>
+    {% for post in post_list %}
+    <div class='post'>
+        
+        <h1><a href="{% url 'blog:post_detail' pk=post.pk %}">{{post.title}}</a></h1>
+        <div class = "date">
+            <P>Published on: {{post.published_date|date:"D M Y"}}</P>
+
+        </div>
+        <a href="{% url 'blog:post_detail' pk=post.pk %}">Comments:{{post.approved_comment.count}}</a>
+    </div>
+    {% endfor %}
+
+
+    <div class="container text-muted">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="card-block">
+                        <img src="https://introvertdear.com/wp-content/uploads/2019/07/why-INFJs-should-start-a-blog-770x470.jpg" class="card-img-top img-fluid"/>
+                        <h3 class="card-title">Day 1</h3>
+                        <p>Blog on day-1</p>
+                    </div>
+                </div>
+            </div>
+        
+    
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="card-block">
+                        <img src="https://introvertdear.com/wp-content/uploads/2019/07/why-INFJs-should-start-a-blog-770x470.jpg " class="card-img-top img-fluid"/>
+                        <h3 class="card-title">Day 2</h3>
+                        <p>Blog on day-2</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="card-block">
+                        <img src="https://introvertdear.com/wp-content/uploads/2019/07/why-INFJs-should-start-a-blog-770x470.jpg" class="card-img-top img-fluid"/>
+                        <h3 class="card-title">Day 3</h3>
+                        <p>Blog on day-3</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="card-block">
+                        <img src="https://introvertdear.com/wp-content/uploads/2019/07/why-INFJs-should-start-a-blog-770x470.jpg" class="card-img-top img-fluid"/>
+                        <h3 class="card-title">Day 4</h3>
+                        <p>Blog on day-4</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}
